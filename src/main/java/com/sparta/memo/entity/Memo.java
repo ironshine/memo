@@ -1,6 +1,7 @@
 package com.sparta.memo.entity;
 
 import com.sparta.memo.dto.MemoRequestDto;
+import com.sparta.memo.dto.MemoResponseDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,11 @@ public class Memo {
     private String contents;
 
     public Memo(MemoRequestDto requestDto) {
+        this.username = requestDto.getUsername();
+        this.contents = requestDto.getContents();
+    }
+
+    public void update(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
     }
